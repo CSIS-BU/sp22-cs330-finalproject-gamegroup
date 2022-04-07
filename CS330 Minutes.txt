@@ -1,1 +1,3 @@
 Team members: Grace Ngo, Zech Burrus, Ethan Kirchner
+
+We will code in Python, and we will be making a Wordle clone.
