@@ -1,0 +1,19 @@
+Names: Ethan, Zech, Grace
+Game: (Copy of) Wordle
+Coding Language: Python
+
+Timeline
+4/7: Met up for planning and outlines, figured out the game we'll recreate, assigned roles and doing research
+4/8 - 4/10: Personal planning, evaluating approaches to the project until next meet up (online or in-person)
+4/11 - 4/15: Writing up skeleton code, prototyping and designing the game 
+		 GOAL by 4/15: getting all pseudocode/outlining done, meet up one or twice beforehand
+4/16 - 4/17: Submission to GitHub of progress on 4/16, continue to make improvements and refinements, headstart on actual coding and UI
+4/18 - 4/22: Coding the project, testing the project, debugging the project, overall getting the game to work almost exactly like the original
+		 GOAL by 4/22: Major functions of the game up and running (guessing, random word generator, showing correct letters, etc), 
+				   if major functions are not working, overtime on the weekend is needed (work will most likely bleed into next week)
+		 		   Meeting up once or twice within the week, maybe more depending on progress speed
+4/23 - 4/24: Submission to GitHub of progress on 4/23, continue to make improvements and refinements, planning small visual details
+4/25 - 4/27: Refining the project, adding more details, final debugs and modifications
+		 GOAL by 4/27: Getting as much tests done as possible to ensure game quality and functions are properly working
+				   Meeting up as much as possible until this is polished (as much as it can be)
+4/28: Final adjustments, details, improvements, etc; Final submission to GitHub before on 4/28 11:59pm
