@@ -1,8 +1,14 @@
-Team members: Grace Ngo, Zech Burrus, Ethan Kirchner
 
-We will code in Python, and we will be making a Wordle clone.
+Week1: 
+	Team members: Grace Ngo, Zech Burrus, Ethan Kirchner
 
-Roles/Actions:
-	Ethan: Outlining the project and desigining the architecture.
-	Zechariah: Primary programming portion of the project
-	Grace: Make a collection of words to use for wordle and handling UI design, testing.
+	We will code in Python, and we will be making a Wordle clone.
+
+	Roles/Actions:
+		Ethan: Outlining the project and desigining the architecture.
+		Zechariah: Primary programming portion of the project
+		Grace: Make a collection of words to use for wordle and handling UI design, testing.
+
+	Updated the milestones to reflect our timeline.
+
+Week2:
