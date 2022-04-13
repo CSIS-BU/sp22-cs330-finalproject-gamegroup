@@ -3,7 +3,7 @@ What we will need for the program -
 Server Side:
 Dictionairy.txt (For the words we will pull from)
 A randomly generated value that is generated once every time the server starts/24 hours; This value dictates the word.
-A comparater to compare times sent from the client to decide who wins. If no time is sent, draw.'
+A comparater to compare times sent from the client to decide who wins. If no time is sent, draw.
 A function to keep track of what spaces are yellow/green and can save the data locally as a struct, and then send it to the client for the dummy visuals
 send back a signal to start the game once both players are ready
 
