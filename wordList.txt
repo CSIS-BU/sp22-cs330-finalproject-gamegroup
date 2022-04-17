@@ -1,0 +1,32 @@
+"Wordle" Replica Word List:
+
+1) Tinge
+2) Laugh
+3) Stead
+4) Decay
+5) Canoe
+6) Inbox
+7) Fairy
+8) Fuzzy
+9) Float
+10) Scarf
+11) Guard
+12) Moist
+13) Cheer
+14) Timer
+15) Handy
+16) Faint
+17) Chuck
+18) Hobby
+19) Flush
+20) Hutch
+21) Tower
+22) Doubt
+23) Carat
+24) Peach
+25) Stole
+26) Price
+27) Range
+28) Wrist
+29) Grave
+30) Nerve
