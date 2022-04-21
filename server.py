@@ -35,10 +35,20 @@ def server(server_port):
             with clientsocket:
                 while True:
                     # receive data and print it out 
-                    data = clientsocket.recv(RECV_BUFFER_SIZE)
-                    if not data: break
-                    sys.stdout.buffer.write(data)
-                sys.stdout.flush()
+                    guess = clientsocket.recv(RECV_BUFFER_SIZE)
+                    guess = guess.decode()
+
+                    #If the guess equals the word of the day send the client success otherwise failure.
+                    if guess == wordOfTheDay:
+                        clientsocket.send("Success".encode())
+                    else:
+                        clientsocket.send("Failure".encode())
+
+                    if not guess:
+                        break
+
+                    #sys.stdout.buffer.write(guess.encode())
+                #sys.stdout.flush()
     pass
 
 
