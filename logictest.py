@@ -64,21 +64,27 @@ def main():
 
             guess = sys.stdin.buffer.read(SEND_BUFFER_SIZE) 
 
-            response = ""
-            for i in range(len(word)):
-                #Compare each letter of the guessed word to the correct word and change it's color, print response to the player.
-                if guess[i] == word[i]:
-                    #Green and yellow wasn't really working in my terminal so I'm using these for now
-                    response += Back.CYAN + Fore.BLACK + guess[i] + Fore.RESET + Back.RESET
-                elif guess[i] in word:
-                    response += Back.YELLOW + Fore.BLACK + guess[i] + Fore.RESET + Back.RESET
-                else:
-                    response += guess[i] + Back.RESET
-            print(response)
-
             sent = s.sendall(guess) 
+             
             if sent == 0: 
                 raise RuntimeError("socket connection broken")
+           
+            data = clientsocket.recv(RECV_BUFFER_SIZE) 
+            if not data: break
+           
+            response = ""
+            for i in range(len(data)):
+                #Compare each letter of the guessed word to the correct word and change it's color, print response to the player.
+                if guess[i] == "1":
+                    #Green and yellow wasn't really working in my terminal so I'm using these for now
+                    response += Back.CYAN + Fore.BLACK + word[i] + Fore.RESET + Back.RESET
+                elif guess[i] == "2":
+                    response += Back.YELLOW + Fore.BLACK + word[i] + Fore.RESET + Back.RESET
+                else:
+                    response += word[i] + Back.RESET
+            print(response)
+
+            
             
             flag = clientsocket.recv(RECV_BUFFER_SIZE) 
             
