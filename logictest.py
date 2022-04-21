@@ -16,7 +16,6 @@ def main():
         sys.exit("Usage: python3 wordle.py [Server IP] [Server Port]") 
     server_ip = sys.argv[1] 
     server_port = int(sys.argv[2]) 
-    client(server_ip, server_port) 
     
     """TODO: Open socket and send message from sys.stdin""" 
     # create an INET, STREAMing socket 
@@ -46,7 +45,7 @@ def main():
             if sent == 0: 
                 raise RuntimeError("socket connection broken")
            
-            data = clientsocket.recv(BUFFER_SIZE) 
+            data = s.recv(BUFFER_SIZE) 
             if not data: break
            
             response = ""
