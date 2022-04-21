@@ -25,7 +25,7 @@ def main():
         # now connect to server 
         s.connect((server_ip, server_port)) 
     
-        word = clientsocket.recv(RECV_BUFFER_SIZE) 
+        word = s.recv(RECV_BUFFER_SIZE) 
         if not data: break
             
         #This is for testing purposes, just prints out the chosen word.
@@ -63,7 +63,7 @@ def main():
 
             
             
-            flag = clientsocket.recv(RECV_BUFFER_SIZE) 
+            flag = s.recv(RECV_BUFFER_SIZE) 
             
             #If the user guesses the word correctly then the game is over
             if flag == "YES":
