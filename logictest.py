@@ -7,7 +7,7 @@ init()
 wordList = ["Pilot", "Pound", "Queen", "Ratio", "Shock", "Sheep", "Skill"]
 word = random.choice(wordList).lower()
 
-SEND_BUFFER_SIZE = 2048 
+BUFFER_SIZE = 2048 
  
 def main():
     
@@ -25,7 +25,7 @@ def main():
         # now connect to server 
         s.connect((server_ip, server_port)) 
     
-        word = s.recv(RECV_BUFFER_SIZE) 
+        word = s.recv(BUFFER_SIZE) 
         if not data: break
             
         #This is for testing purposes, just prints out the chosen word.
@@ -39,14 +39,14 @@ def main():
         for attempts in range(1, 5):
             print("Guess #" + str(attempts) + ": ")
 
-            guess = sys.stdin.buffer.read(SEND_BUFFER_SIZE) 
+            guess = sys.stdin.buffer.read(BUFFER_SIZE) 
 
             sent = s.sendall(guess) 
              
             if sent == 0: 
                 raise RuntimeError("socket connection broken")
            
-            data = clientsocket.recv(RECV_BUFFER_SIZE) 
+            data = clientsocket.recv(BUFFER_SIZE) 
             if not data: break
            
             response = ""
@@ -63,7 +63,7 @@ def main():
 
             
             
-            flag = s.recv(RECV_BUFFER_SIZE) 
+            flag = s.recv(BUFFER_SIZE) 
             
             #If the user guesses the word correctly then the game is over
             if flag == "YES":
