@@ -4,6 +4,7 @@ import socket
 SEND_BUFFER_SIZE = 2048
 RECV_BUFFER_SIZE = 2048
 
+# Zech and Ethan both wrote and figured out the logic of code
 
 def client(server_ip, server_port):
     """TODO: Open socket and send message from sys.stdin"""
