@@ -25,7 +25,6 @@ def main():
         s.connect((server_ip, server_port)) 
     
         word = s.recv(BUFFER_SIZE) 
-        if not data: break
             
         #This is for testing purposes, just prints out the chosen word.
         print("The server chose: " + word)
@@ -46,7 +45,6 @@ def main():
                 raise RuntimeError("socket connection broken")
            
             data = s.recv(BUFFER_SIZE) 
-            if not data: break
            
             response = ""
             for i in range(len(data)):
