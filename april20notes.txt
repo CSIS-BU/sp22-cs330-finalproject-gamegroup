@@ -1,0 +1,10 @@
+Today's Discussion (4/20/22):
+
+-Finalized details of how we are going to approach project
+-Brushed up on Python concepts and methods
+-Start physically coding everything up (including pseudocode)
+-Wrote out logic for the code (Ethan and Zech collaborated on this part)
+-Tested out the logic and tried solving the issues with it
+-Attempting to get a logic test working 
+-Successfully got it to work after a few more tries
+-Agreed to meet up again later in the week to ensure our ideas align
