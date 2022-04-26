@@ -37,12 +37,20 @@ def server(server_port):
                     # receive data and print it out 
                     guess = clientsocket.recv(RECV_BUFFER_SIZE)
                     guess = guess.decode()
+                    result = ""
 
-                    #If the guess equals the word of the day send the client success otherwise failure.
-                    if guess == wordOfTheDay:
-                        clientsocket.send("Success".encode())
-                    else:
-                        clientsocket.send("Failure".encode())
+                    # creates a string of numbers that represents whether the letter is in the correct place
+                    # is contained within the word of the day or doesn't exist at all
+                    for i in range(len(guess)):
+                        print(result)
+                        if guess[i] == wordOfTheDay[i]:
+                            result[i] += '0'
+                        elif guess[i] in wordOfTheDay:
+                            result[i] += '1'
+                        else:
+                            result[i] += '2'
+
+                    clientsocket.send(result.encode())
 
                     if not guess:
                         break
