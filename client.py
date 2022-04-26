@@ -18,6 +18,7 @@ def client(server_ip, server_port):
 
             # Take the user's input as a guess
             guess = ""
+            guessCount = 0
             while (len(guess) < 5 or len(guess) > 5):
                 guess = input()
                 guessCount += 1
@@ -32,6 +33,8 @@ def client(server_ip, server_port):
 
             # Accept code from the server
             guessCode = s.recv(RECV_BUFFER_SIZE)
+
+            response = ""
 
             # Decode the code from server to the response for player
             for i in range(len(guessCode)):
