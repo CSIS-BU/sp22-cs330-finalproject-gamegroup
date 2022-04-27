@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 import socket
 import random
@@ -41,14 +42,23 @@ def server(server_port):
 
                     # creates a string of numbers that represents whether the letter is in the correct place
                     # is contained within the word of the day or doesn't exist at all
+                    print(guess)
+
+                    # Capitalize the first letter to match the word list
+                    guess = guess.capitalize()
+
                     for i in range(len(guess)):
-                        print(result)
+                        # print(result) #DEBUG
+                        # print(guess[i]) #DEBUG
+                        # print(wordOfTheDay[i]) #DEBUG
                         if guess[i] == wordOfTheDay[i]:
-                            result[i] += '0'
+                            result += '0'
                         elif guess[i] in wordOfTheDay:
-                            result[i] += '1'
+                            result += '1'
                         else:
-                            result[i] += '2'
+                            result += '2'
+
+                    print(result + '\n')
 
                     clientsocket.send(result.encode())
 
