@@ -1,0 +1,9 @@
+(Notes uploaded later than initial date due to conflicts)
+
+Today's Discussion (4/25/22):
+-Logic testing working where the client never receives the word
+-Server is fully functional and does all of the thinking
+-Client sends a guess, server sends back a string of numbers
+	-This tell the client which letters where right, wrong, or misplaced
+	-Also prevents client side cheating, allows the server to do everything
+-Fixed UI and details such as colors and formatting
