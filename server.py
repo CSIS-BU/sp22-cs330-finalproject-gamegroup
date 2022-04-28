@@ -27,6 +27,7 @@ def client_handler(clientsocket):
         while True:
             # receive data and print it out
             guess = clientsocket.recv(RECV_BUFFER_SIZE)
+
             guess = guess.decode()
             result = ""
 
@@ -52,8 +53,6 @@ def client_handler(clientsocket):
 
             clientsocket.send(result.encode())
 
-            if not guess:
-                break
 
 def server(server_port):
     """TODO: Listen on socket and print received message to sys.stdout"""
