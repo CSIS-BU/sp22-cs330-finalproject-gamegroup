@@ -10,7 +10,7 @@
 	* Start the client using "python client.py 127.0.0.1 [Server_Port_Number]"
 
 ## How the game works:
-	Guess a five letter word within 6 tried
+	Guess a 5 letter word within 6 tries
 	
 	If you guess a letter correctly and in the correct spot, the letter turns cyan
 	
