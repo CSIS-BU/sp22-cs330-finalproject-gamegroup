@@ -2,6 +2,7 @@
 import sys
 import socket
 import random
+from _thread import *
 
 RECV_BUFFER_SIZE = 2048
 QUEUE_LENGTH = 10
@@ -14,11 +15,45 @@ wordList = []
 for eachLine in wordFile:
     wordList.append(eachLine.replace("\n", ""))
 
-# Choose a random word
-wordOfTheDay = random.choice(wordList)
+def client_handler(clientsocket):
 
-# Debugging, print out the word of the day.
-print(wordOfTheDay)
+    # Choose a random word
+    wordOfTheDay = random.choice(wordList)
+
+    # Debugging, print out the word of the day.
+    print(wordOfTheDay)
+
+    with clientsocket:
+        while True:
+            # receive data and print it out
+            guess = clientsocket.recv(RECV_BUFFER_SIZE)
+            guess = guess.decode()
+            result = ""
+
+            # creates a string of numbers that represents whether the letter is in the correct place
+            # is contained within the word of the day or doesn't exist at all
+            print(guess)
+
+            # Capitalize the first letter to match the word list
+            guess = guess.capitalize()
+
+            for i in range(len(guess)):
+                # print(result) #DEBUG
+                # print(guess[i]) #DEBUG
+                # print(wordOfTheDay[i]) #DEBUG
+                if guess[i] == wordOfTheDay[i]:
+                    result += '0'
+                elif guess[i] in wordOfTheDay:
+                    result += '1'
+                else:
+                    result += '2'
+
+            print(result + '\n')
+
+            clientsocket.send(result.encode())
+
+            if not guess:
+                break
 
 def server(server_port):
     """TODO: Listen on socket and print received message to sys.stdout"""
@@ -33,40 +68,7 @@ def server(server_port):
             # accept connections from outside 
             (clientsocket, address) = serversocket.accept()
 
-            with clientsocket:
-                while True:
-                    # receive data and print it out 
-                    guess = clientsocket.recv(RECV_BUFFER_SIZE)
-                    guess = guess.decode()
-                    result = ""
-
-                    # creates a string of numbers that represents whether the letter is in the correct place
-                    # is contained within the word of the day or doesn't exist at all
-                    print(guess)
-
-                    # Capitalize the first letter to match the word list
-                    guess = guess.capitalize()
-
-                    for i in range(len(guess)):
-                        # print(result) #DEBUG
-                        # print(guess[i]) #DEBUG
-                        # print(wordOfTheDay[i]) #DEBUG
-                        if guess[i] == wordOfTheDay[i]:
-                            result += '0'
-                        elif guess[i] in wordOfTheDay:
-                            result += '1'
-                        else:
-                            result += '2'
-
-                    print(result + '\n')
-
-                    clientsocket.send(result.encode())
-
-                    if not guess:
-                        break
-
-                    #sys.stdout.buffer.write(guess.encode())
-                #sys.stdout.flush()
+            start_new_thread(client_handler, (clientsocket, ))
     pass
 
 
