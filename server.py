@@ -18,7 +18,7 @@ for eachLine in wordFile:
 def client_handler(clientsocket):
 
     # Choose a random word
-    wordOfTheDay = random.choice(wordList)
+    wordOfTheDay = random.choice(wordList).lower()
 
     # Debugging, print out the word of the day.
     print(wordOfTheDay)
@@ -35,7 +35,7 @@ def client_handler(clientsocket):
             print(guess)
 
             # Capitalize the first letter to match the word list
-            guess = guess.capitalize()
+            guess = guess.lower()
 
             for i in range(len(guess)):
                 # print(result) #DEBUG
