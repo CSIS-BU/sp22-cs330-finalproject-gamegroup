@@ -1,13 +1,16 @@
 #!/usr/bin/python\
-from colorama import Fore, Back, Style
+from colorama import Fore, Back, Style, init
 import sys
 import socket
 
 SEND_BUFFER_SIZE = 2048
 RECV_BUFFER_SIZE = 2048
 
-# Zech and Ethan both wrote and figured out the logic of code
+# Initialize colorama
+init()
 
+
+# Zech and Ethan both wrote and figured out the logic of code
 def instructions():
     # Instructions
     print("Welcome to Wordle! Your objective is to guess the correct word.\n")
